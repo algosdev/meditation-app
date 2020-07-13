@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(to right, #43cea2 ,#185a9d);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    font-family: sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2 {
+    margin: 30px 0 130px;
+    font-size: 30px;
+}
+.container {
+    position: relative;
+    height: 320px;
+    width: 320px;
+    margin-left: -20px;
+    text-align: center;
+    transform: scale(1);
+    animation-name: scaler;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+.circle {
+    height: 300px;
+    width: 300px;
+    background: rgb(5, 54, 73);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+}
+#text {
+    margin: 135px 0;
+    font-size: 20px;
+}
+.colorfull {
+    position: absolute;
+    background: conic-gradient(
+        #07a16e  0%,
+        #07d3b1 40%,
+        #ace4da 40%,
+        #ffffff 60%,
+        #078159 60%,
+        #096d4b 100%
+    );
+    height: 100%;
+    width: 100%;
+    left: 10px;
+    top: 10px;
+    border-radius: 50%;
+    z-index: -2;
+    overflow: hidden;
+}
+.pointer-container {
+    position: absolute;
+    display: block;
+    top: -15px;
+    left: 160px;
+    animation-name:  rotater;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotate(270deg);
+}
+.point{
+    height: 20px;
+    display: block;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.stick {
+    width: 20px;
+    height: 350px;
+    background-color: transparent;
+}
+@keyframes rotater {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes scaler {
+    0% {
+        transform: scale(1);
+    }
+    37.5% {
+        transform: scale(1.25);
+    }
+    56.25% {
+        transform: scale(1.25);
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+@media (max-width: 500px){
+    @keyframes scaler {
+        0% {
+            transform: scale(.6);
+        }
+        37.5% {
+            transform: scale(.8);
+        }
+        56.25% {
+            transform: scale(.8);
+        }
+        100% {
+            transform: scale(.6)
+        }
+    }
+    h2 {
+        margin: 30px 0 100px;
+        font-size: 24px;
+        font-weight: 400;
+        letter-spacing: 3px;
+    }
+
+}
